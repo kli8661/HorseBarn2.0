@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class HorseBarn {
 
     private Horse[] spaces;
@@ -13,7 +16,7 @@ public class HorseBarn {
         {
             if (this.spaces[i]!= null && name.equals(this.spaces[i].getName()))
             {
-                return i + 1;
+                return i+1;
             }
         }
         return -1;
@@ -21,16 +24,18 @@ public class HorseBarn {
 
     public void consolidate()
     {
-        for(int i = 0; i < this.spaces.length -1; i++) {
-            if(this.spaces[i] == null) {
-                for (int j = i + 1; j < this.spaces.length; j++){
-                    if(this.spaces[j] != null) {
-                        this.spaces[i] = this.spaces[j];
-                        this.spaces[j] = null;
-                        j = this.spaces.length;
-                    }
-                }
-            }
+        List<Horse> horseList = new ArrayList<Horse>();
+        for (Horse h : this.spaces)
+        {
+            if(h != null) horseList.add(h);
+        }
+        for(int i = 0; i < this.spaces.length; i++)
+        {
+            this.spaces[i] = null;
+        }
+        for(int i = 0; i < horseList.size(); i++)
+        {
+            this.spaces[i] = horseList.get(i);
         }
     }
 
