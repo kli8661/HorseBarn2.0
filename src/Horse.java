@@ -1,5 +1,6 @@
 public interface Horse {
 
-    String getName();
-    String getWeight();
+    public abstract String getName();
+    public abstract int getWeight();
+    public abstract String toString();
 }

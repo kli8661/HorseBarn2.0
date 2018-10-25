@@ -26,4 +26,14 @@ public class HorseBarn {
             }
         }
     }
+
+    public String toString()
+    {
+        String result = "";
+        for(int i = 0; i < this.spaces.length; i++)
+        {
+            result += "[" + this.spaces[i] + "] ";
+        }
+        return result;
+    }
 }
