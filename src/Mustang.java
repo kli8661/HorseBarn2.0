@@ -26,4 +26,9 @@ public class Mustang implements Horse{
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    public String toString()
+    {
+        return name;
+    }
 }
